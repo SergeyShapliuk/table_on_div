@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Main from './components/routes/Main';
 import Page from './components/routes/Page';
@@ -13,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main dataOut={dataJson} />} />
         <Route path="/:id" element={<Page dataOut={dataJson} />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );
